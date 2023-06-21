@@ -12,7 +12,19 @@ string[] sampleDateTimes = {
     "Jan 1 '15",
 };
 
-foreach (string datestr in sampleDateTimes) {
+foreach (string datestr in sampleDateTimes)
+{
     DateTime result;
     // TODO: Use the static class function TryParse to try parsing the dates
+
+    if (DateTime.TryParse(datestr, out result))
+    {
+        Console.WriteLine(result);
+    }
+    else
+    {
+        Console.WriteLine($"Could not parse {datestr}");
+
+
+    }
 }
